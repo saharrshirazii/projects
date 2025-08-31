@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahars första webbsida</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <h1>Chas Academy!</h1>
-    <p>Min första webbsida är nu online.</p>
+    <!-- Header menu added -->
+    <header>
+        <div class="container">
+            <h1 class="site-title">Chas Academy!</h1>
+            <nav aria-label="Huvudmeny">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#cv">My CV</a></li>
+                    <li><a href="#course">Course</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ...existing code... -->
+    <main class="container" style="padding:20px;">
+        <p>Min första webbsida är nu online.</p>
+
+        <!-- Example sections for the menu anchors -->
+        <section id="about">
+            <h2>About me</h2>
+            <p>En kort presentation...</p>
+        </section>
+
+        <section id="cv">
+            <h2>My CV</h2>
+            <p>Information om CV...</p>
+        </section>
+
+        <section id="course">
+            <h2>Course</h2>
+            <p>Detaljer om kursen...</p>
+        </section>
+    </main>
 </body>
 </html>
