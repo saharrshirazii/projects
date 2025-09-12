@@ -33,7 +33,7 @@
             text-decoration: none;
             padding: 8px 10px;
             border-radius: 6px;
-            font-weight: 500;
+            font-weight: 300;
         }
         nav a:hover,
         nav a:focus {
@@ -71,14 +71,270 @@
             }
         }
 
+        /*body*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f4f1;
+        }
+
         /* Main background image for the page */
         main.container {
-            /* keep existing padding in HTML but ensure layout rules here */
-            background-image: url("../img/bg-img.jpg");
+            border: 1px solid #837e7c;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-blend-mode: overlay;
-            color: #fff;
+            color: #837e7c;
             min-height: 60vh;
+            display: flex;
+            grid-template-columns: auto auto auto;
         }
+        .main-content{
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            flex:1;
+           
+        }
+        .personal-img{
+            text-align: right;
+            padding: 20px;
+            flex:1;
+        }
+        .personal-img img{
+            width: 300px;
+            height: auto;
+            border-radius: 48%;
+            margin-left: 20px;
+            text-align: right;
+        }
+
+        /* Footer styles */
+        .footer-container{
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 12px;
+            background: #839e91;
+            color: #fff;
+            text-align: center;
+            height: 290px;
+
+        }
+
+
+        /* Responsive: stack vertically on small screens */
+        @media (max-width: 700px) {
+            #about {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            #about .personal-img {
+                order: 0;
+                width: 100%;
+                flex: none;
+            }
+        }
+
+        /* CV Timeline */
+        /* The actual timeline (the vertical ruler) */
+        main.timeline-container {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            color: #837e7c;
+            display: flex;
+            grid-template-columns: auto auto auto;
+            padding:20px;
+        }
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container-cv {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 43.5%;
+}
+
+/* The circles on the timeline */
+.container-cv::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container-cv {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container-cv::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+  }
+
+
+  /* Course section */
+  main.course-container {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+      color: #837e7c;
+      grid-template-columns: auto auto auto;
+      padding:20px;
+      border: 1px solid #837e7c;
+      max-width: 960px;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+
+  }
+
+    .course-content{
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .companies-table{
+            text-align: right;
+            padding: 20px;
+        }
+         @media (max-width: 600px) {
+            .course-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Table styles for courses */
+.companies-table {
+  overflow-x: auto; /* allow horizontal scroll on small screens */
+}
+table.courses {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+}
+table.courses th,
+table.courses td {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  text-align: left;
+}
+table.courses th {
+  background: #839e91;
+  color: #fff;
+  font-weight: 600;
+}
+table.courses tr:nth-child(even) td {
+  background: #f7f7f7;
+}
+
+
+
+
+
